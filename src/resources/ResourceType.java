@@ -1,4 +1,4 @@
-package facilities;
+package resources;
 
 public enum ResourceType {
     OXYGEN,

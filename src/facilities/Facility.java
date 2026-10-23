@@ -3,6 +3,7 @@ package facilities;
 import java.util.EnumMap;
 
 import common.Location;
+import resources.ResourceType;
 
 import java.util.ArrayList;
 

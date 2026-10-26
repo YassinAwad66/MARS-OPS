@@ -6,6 +6,6 @@ public class CommunicationStation extends Facility{
     }
 
     public boolean isCommAvailable(){
-        return super.getStatus() == FacilityStatus.OPERATIONAL;
+        return isOperational();
     }
 }

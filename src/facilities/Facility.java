@@ -54,25 +54,31 @@ public abstract class Facility implements Location {
         return stock.get(type);
     }
 
-    public FacilityStatus getStatus() {
-        return status;
+    public boolean isOperational() {
+        return status == FacilityStatus.OPERATIONAL;
     }
 
     public ArrayList<Equipment> getEquipments() {
         return equipments;
     }
 
-    public boolean addResource(ResourceType type, int qty){
-        if(qty <= 0)
+    public boolean addResource(ResourceType type, int qty) {
+        if (type == null || qty <= 0) {
             return false;
+        }
         stock.put(type, stock.get(type) + qty);
         return true;
     }
 
-    public boolean removeResource(ResourceType type, int qty){
-        if(qty <= 0 || qty > stock.get(type))
+    public boolean removeResource(ResourceType type, int qty) {
+        if (type == null || qty <= 0 || qty > stock.get(type)) {
             return false;
+        }
         stock.put(type, stock.get(type) - qty);
         return true;
-    }
+        }
+
+        public void addEquipment(Equipment e){
+            equipments.add(e);
+        }
 }

@@ -10,16 +10,16 @@ public class Laboratory extends Facility{
 
     public void ignite(){
         onFire = true;
-        super.setStatus(FacilityStatus.UNAVAILABLE);
+        setStatus(FacilityStatus.UNAVAILABLE);
     }
 
     public void extinguish(){
         onFire = false;
-        super.setStatus(FacilityStatus.OPERATIONAL);
+        setStatus(FacilityStatus.OPERATIONAL);
     }
 
     public void damageAllEquipment(){
-        for(Equipment e : super.getEquipments()){
+        for(Equipment e : getEquipments()){
             e.damage();
         }
     }

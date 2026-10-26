@@ -22,11 +22,11 @@ public class Habitat extends Facility{
     }
 
     public int getOxygen(){
-        return super.getQuantity(ResourceType.OXYGEN);
+        return getQuantity(ResourceType.OXYGEN);
     }
 
     public void loseOxygen(int amount){
-        int lost = Math.min(amount, super.getQuantity(ResourceType.OXYGEN));
-        super.removeResource(ResourceType.OXYGEN, lost);
+        int lost = Math.min(amount, getQuantity(ResourceType.OXYGEN));
+        removeResource(ResourceType.OXYGEN, lost);
     }
 }

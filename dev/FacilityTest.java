@@ -1,12 +1,7 @@
 package dev;
 
-import facilities.Habitat;
-import facilities.Laboratory;
-import facilities.StorageFacility;
-import facilities.PowerStation;
-import facilities.CommunicationStation;
-import facilities.FacilityStatus;
-import resources.ResourceType;
+import facilities.*;
+import resources.*;
 
 public class FacilityTest {
 
@@ -26,19 +21,19 @@ public class FacilityTest {
 
         check(lab.getName().equals("Lab A"),
                 "Laboratory name");
-        check(lab.getStatus() == FacilityStatus.OPERATIONAL,
+        check(lab.isOperational(),
                 "Laboratory starts operational");
 
         lab.ignite();
 
-        check(lab.getStatus() == FacilityStatus.UNAVAILABLE,
+        check(lab.isOperational(),
                 "Fire makes laboratory unavailable");
 
         lab.extinguish();
 
         check(!labIsOnFire(lab),
                 "Laboratory fire is extinguished");
-        check(lab.getStatus() == FacilityStatus.OPERATIONAL,
+        check(lab.isOperational(),
                 "Laboratory becomes operational after extinguishing");
 
         // 3. Storage facility
@@ -86,12 +81,12 @@ public class FacilityTest {
         check(communications.getName().equals("Comms A"),
                 "Communication station name");
 
-        check(communications.getStatus() == FacilityStatus.OPERATIONAL,
+        check(communications.isCommAvailable(),
                 "Communication station starts operational");
 
         communications.setStatus(FacilityStatus.UNAVAILABLE);
 
-        check(communications.getStatus() == FacilityStatus.UNAVAILABLE,
+        check(communications.isCommAvailable(),
                 "Communication station can become unavailable");
 
         System.out.println("\n=== TESTING FINISHED ===");

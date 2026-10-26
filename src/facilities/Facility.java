@@ -2,12 +2,13 @@ package facilities;
 
 import java.util.EnumMap;
 
-import common.Location;
+import common.*;
+import core.MarsColony;
 import resources.ResourceType;
 
 import java.util.ArrayList;
 
-public abstract class Facility implements Location {
+public abstract class Facility implements Location, Tickable {
     private EnumMap<ResourceType, Integer> stock = new EnumMap<>(ResourceType.class);
     private ArrayList<Equipment> equipments = new ArrayList<>();
     private String name;
@@ -80,5 +81,11 @@ public abstract class Facility implements Location {
 
         public void addEquipment(Equipment e){
             equipments.add(e);
+        }
+
+        @Override 
+        public void onTick(MarsColony colony) {
+                // No general per-tick facility update is defined here yet.
+                // Add behavior only if required by the project rules.
         }
 }

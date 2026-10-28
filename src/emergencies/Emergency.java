@@ -9,9 +9,8 @@ public abstract class Emergency {
     protected EmergencyState state = EmergencyState.PENDING;
     protected String reason;
 
-    protected Emergency(EmergencyType type, String reason) {
+    protected Emergency(EmergencyType type) {
         this.type = type;
-        this.reason = reason;
     }
 
     // template method: subclasses can't change the order of steps
@@ -44,7 +43,7 @@ public abstract class Emergency {
         return state; 
     }
     public String getReason() {
-         return reason; 
+        return reason; 
     }
 
     protected abstract Set<Capability> getRequiredCapabilities();

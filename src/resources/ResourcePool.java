@@ -29,9 +29,9 @@ public class ResourcePool {
     }
 
     public OperationResult consume(Map<ResourceType, Integer> req) {
-        // all-or-nothing: check first so we never half-consume
         OperationResult check = canSupply(req);
-        if (!check.isSuccess()) return check;
+        if (!check.isSuccess())
+             return check;
 
         for (Map.Entry<ResourceType, Integer> e : req.entrySet()) {
             int remaining = e.getValue();

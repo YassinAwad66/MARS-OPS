@@ -43,6 +43,7 @@ public abstract class Facility implements Location, Tickable {
         return true;
     }
 
+    @Override 
     public String getName() {
         return name;
     }

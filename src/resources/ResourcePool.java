@@ -38,7 +38,7 @@ public class ResourcePool {
             for (Facility f : orderedFacilities(e.getKey())) {
                 if (remaining == 0) break;
                 int take = Math.min(remaining, f.getQuantity(e.getKey()));
-                if (take > 0 && f.tryRemove(e.getKey(), take)) {
+                if (take > 0 && f.removeResource(e.getKey(), take)) {
                     remaining -= take;
                 }
             }

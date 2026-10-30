@@ -41,7 +41,7 @@ public class Main {
         // Initialize resources
         habitat.addResource(ResourceType.OXYGEN, 500);
         habitat.addResource(ResourceType.WATER, 300);
-        habitat.addResource(ResourceType.POWER, 1000);
+        habitat.addResource(ResourceType.BATTERY_POWER, 1000);
 
         List<Facility> facilities = new ArrayList<>();
         facilities.add(habitat);
@@ -145,8 +145,7 @@ public class Main {
 
         OxygenLeak oxygenLeak = new OxygenLeak(
                 habitat,
-                50,
-                "Oxygen leak detected in Habitat-A"
+                50
         );
 
         System.out.println("Emergency Triggered: Oxygen Leak");

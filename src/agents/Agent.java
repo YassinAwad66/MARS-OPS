@@ -7,7 +7,11 @@
  *
  * @author asus
  */
-package marsops_agents;
+package agents;
+
+import common.Location;
+import emergencies.EmergencyType;
+import missions.Mission;
 
 /**
  *

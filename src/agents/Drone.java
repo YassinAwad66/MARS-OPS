@@ -7,7 +7,12 @@
  *
  * @author asus
  */
+package agents;
 
+import common.*;
+import missions.*;
+import emergencies.*;
+import core.*;
 
 import java.util.HashSet;
 

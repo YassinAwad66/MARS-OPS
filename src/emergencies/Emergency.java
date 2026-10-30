@@ -3,6 +3,7 @@ package emergencies;
 import java.util.*;
 import core.*;
 import resources.*;
+import agents.*;
 
 
 public abstract class Emergency {

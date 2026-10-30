@@ -10,6 +10,11 @@
 
 import java.util.Set;
 
+import common.*;
+import emergencies.EmergencyType;
+import missions.Mission;
+
+
 public abstract class CrewMember implements Agent, Tickable {
     protected String id;
     protected String name;

@@ -7,7 +7,13 @@
  *
  * @author asus
  */
-package marsops_agents;
+package agents;
+
+import common.*;
+import missions.*;
+import emergencies.*;
+import facilities.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

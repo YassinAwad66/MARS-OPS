@@ -1,3 +1,6 @@
+package core;
+import common.*;
+
 public class Environment implements Tickable {
     private EnvironmentCondition condition;
 

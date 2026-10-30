@@ -1,9 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+package core;
+
+import java.util.*;
 import resources.*;
 import facilities.*;
 import missions.*;
-import core.*;
 import agents.*;
 import emergencies.*;
 

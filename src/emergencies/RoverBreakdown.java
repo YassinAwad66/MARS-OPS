@@ -11,6 +11,7 @@ public class RoverBreakdown extends Emergency {
         this.rover = rover;
     }
 
+    @Override 
     protected Set<Capability> getRequiredCapabilities() { 
         return Set.of(Capability.REPAIR); 
     }
@@ -18,7 +19,7 @@ public class RoverBreakdown extends Emergency {
         return Map.of(ResourceType.SPARE_PARTS, 2); 
     }
 
-    protected void onDetected(MarsColony c)   { /* rover marked broken (P2's Robot API) */ }
-    protected void onResolved(MarsColony c)   { /* rover back in service */ }
-    protected void onUnresolved(MarsColony c) { /* rover stays out of action */ }
+    protected void onDetected(MarsColony c){ /* rover marked broken (P2's Robot API) */ }
+    protected void onResolved(MarsColony c){ /* rover back in service */ }
+    protected void onUnresolved(MarsColony c){ /* rover stays out of action */ }
 }

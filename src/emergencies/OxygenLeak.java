@@ -19,16 +19,22 @@ public class OxygenLeak extends Emergency {
     protected Set<Capability> getRequiredCapabilities() { 
         return Set.of(Capability.REPAIR); 
     }
+    @Override 
     protected Map<ResourceType, Integer> getResponseCost() {
         return Map.of(ResourceType.SPARE_PARTS, 1); 
     }
 
+    @Override
     protected void onDetected(MarsColony c)   { 
         habitat.loseOxygen(leakAmount); 
     }
-    protected void onResolved(MarsColony c)   {
-         /* leak patched, nothing more to lose */ 
+
+    @Override
+    protected void onResolved(MarsColony c) {
+        habitat.addResource(ResourceType.OXYGEN, leakAmount);
     }
+
+    @Override
     protected void onUnresolved(MarsColony c) { 
         habitat.loseOxygen(leakAmount * 2); 
     }

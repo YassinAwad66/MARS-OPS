@@ -14,7 +14,6 @@ public abstract class Emergency {
         this.type = type;
     }
 
-    // template method: subclasses can't change the order of steps
     public final OperationResult handle(MarsColony colony) {
         onDetected(colony);
 

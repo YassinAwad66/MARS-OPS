@@ -54,7 +54,6 @@ public class ResourcePool {
                 result.add(f);
             }
         }
-        // example policy: drain the facility with the most stock first
         result.sort((a, b) -> b.getQuantity(t) - a.getQuantity(t));
         return result;
     }

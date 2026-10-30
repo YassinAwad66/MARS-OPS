@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Arrays;
 
 public class Main {
 
@@ -80,7 +81,7 @@ public class Main {
         );
 
         OperationResult result =
-                colony.getMissionManager().submitAndExecute(mission);
+                colony.getMissionManager().submit(mission, Arrays.asList(scientist, rover));
 
         System.out.println("Mission Execution Result: " + result.getReason());
 
@@ -108,7 +109,7 @@ public class Main {
         );
 
         OperationResult result =
-                colony.getMissionManager().submit(badMission);
+                colony.getMissionManager().submit(badMission, Arrays.asList(engineer, rover));
 
         System.out.println("Expected Rejection Result: " + result.getReason());
 
@@ -188,7 +189,7 @@ public class Main {
         );
 
         OperationResult result =
-                colony.getMissionManager().submitAndExecute(stormMission);
+                colony.getMissionManager().submit(stormMission, Arrays.asList(scientist, rover));
 
         System.out.println("Result during Dust Storm: " + result.getReason());
 

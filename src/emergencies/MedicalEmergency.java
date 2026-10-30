@@ -8,8 +8,8 @@ public class MedicalEmergency extends Emergency {
     private final CrewMember patient;
     private final Facility facility;
 
-    public MedicalEmergency(CrewMember patient, Facility facility, String reason) {
-        super(EmergencyType.MEDICAL, reason);
+    public MedicalEmergency(CrewMember patient, Facility facility) {
+        super(EmergencyType.MEDICAL);
         this.patient = patient;
         this.facility = facility;
     }

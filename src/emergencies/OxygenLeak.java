@@ -8,8 +8,8 @@ public class OxygenLeak extends Emergency {
     private final Habitat habitat;
     private final int leakAmount;
 
-    public OxygenLeak(Habitat habitat, int leakAmount, String reason) {
-        super(EmergencyType.OXYGEN_LEAK, reason);
+    public OxygenLeak(Habitat habitat, int leakAmount) {
+        super(EmergencyType.OXYGEN_LEAK);
         this.habitat = habitat;
         this.leakAmount = leakAmount;
     }

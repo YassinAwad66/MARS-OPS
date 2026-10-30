@@ -6,6 +6,7 @@ import agents.Robot;
 import facilities.Facility;
 import missions.Mission;
 import emergencies.Emergency;
+import resources.ResourceType;
 
 public class ColonyReport {
 

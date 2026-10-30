@@ -7,8 +7,8 @@ import core.MarsColony;
 public class Fire extends Emergency {
     private final Laboratory laboratory;
 
-    public Fire(Laboratory laboratory, String reason) {
-        super(EmergencyType.FIRE, reason);
+    public Fire(Laboratory laboratory) {
+        super(EmergencyType.FIRE);
         this.laboratory = laboratory;
     }
 

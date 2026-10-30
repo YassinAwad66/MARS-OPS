@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
+import resources.*;
+import facilities.*;
+import missions.*;
+import core.*;
+import agents.*;
+import emergencies.*;
 
 public class MarsColony {
     private List<CrewMember> crew;

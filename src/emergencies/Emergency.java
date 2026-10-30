@@ -1,8 +1,9 @@
 package emergencies;
 
 import java.util.*;
-import core.MarsColony;
+import core.*;
 import resources.*;
+
 
 public abstract class Emergency {
     protected final EmergencyType type;

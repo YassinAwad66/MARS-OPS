@@ -6,8 +6,8 @@ import core.MarsColony;
 public class RoverBreakdown extends Emergency {
     private final Robot rover;
 
-    public RoverBreakdown(Robot rover, String reason) {
-        super(EmergencyType.ROVER_BREAKDOWN, reason);
+    public RoverBreakdown(Robot rover) {
+        super(EmergencyType.ROVER_BREAKDOWN);
         this.rover = rover;
     }
 

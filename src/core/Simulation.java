@@ -1,4 +1,9 @@
+package core;
+
 import java.util.List;
+
+import facilities.Facility;
+import common.Tickable;
 
 public class Simulation {
     private MarsColony colony;

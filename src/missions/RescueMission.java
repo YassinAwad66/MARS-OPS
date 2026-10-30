@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import common.*;
+import core.MarsColony;
+import facilities.*;
+import resources.ResourceType;
+
 public final class RescueMission extends Mission {
 
     private Agent strandedEntity;

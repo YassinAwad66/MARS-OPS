@@ -5,6 +5,11 @@ package missions;
 import java.util.List;
 import java.util.Set;
 
+import common.*;
+import core.MarsColony;
+import facilities.*;
+import resources.ResourceType;
+
 public final class ResearchMission extends Mission {
 
     protected Laboratory laboratory;

@@ -9,6 +9,12 @@ import java.util.Set;
 import java.util.Collections;
 import java.util.EnumMap;
 
+import common.*;
+import core.MarsColony;
+import facilities.*;
+import resources.ResourceType;
+import agents.Agent;
+
 public abstract class Mission {
 
     protected final int id;

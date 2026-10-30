@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import core.*;
+import common.*;
+import facilities.Equipment;
+import agents.Agent;
+import resources.*;
+
 public final class MissionManager implements Tickable {
     private Mission activeMission;
     private List<Mission> history = new ArrayList<>();

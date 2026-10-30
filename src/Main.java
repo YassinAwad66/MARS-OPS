@@ -1,10 +1,10 @@
-package main;
 
 import core.*;
 import agents.*;
 import emergencies.*;
-import facilities;
-import missions;
+import facilities.*;
+import missions.*;
+import resources.*;
 
 import java.util.ArrayList;
 import java.util.List;

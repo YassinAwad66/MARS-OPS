@@ -5,6 +5,11 @@
 package missions;
 
 import java.util.Set;
+import core.MarsColony;
+import facilities.*;
+import resources.ResourceType;
+import agents.Agent;
+
 
 /**
  *
@@ -24,7 +29,7 @@ public final class RepairMission extends Mission {
             Equipment targetEquipment,
             Set<Capability> requiredCapabilities) {
 
-        super(id, "Repair target", duration, false, false, minAgents);
+        super(id, "Repair target", duration, false, false, minAgents, requiredCapabilities);
 
         if (targetFacility == null && targetEquipment == null) {
             throw new IllegalArgumentException(

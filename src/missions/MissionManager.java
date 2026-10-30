@@ -49,14 +49,14 @@ public final class MissionManager implements Tickable {
         }
 
         if (rejection != null) {
-            mission.reject(rejection);
+            mission.fail(rejection);
             history.add(mission);
             return OperationResult.fail(rejection);
         }
 
         OperationResult spent = resourcePool.consume(mission.getResourceCost());
         if (!spent.isSuccess()) {
-            mission.reject(spent.getReason());
+            mission.fail(spent.getReason());
             history.add(mission);
             return spent;
         }

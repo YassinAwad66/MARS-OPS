@@ -124,17 +124,6 @@ public abstract class Mission {
         }
     }
 
-    public void reject(String reason) {
-        if (state == MissionState.COMPLETED || state == MissionState.FAILED) {
-            throw new IllegalStateException("Mission (" + id + ") was already finished");
-        }
-
-        if (reason == null || reason.trim().isEmpty()) {
-            reason = "Mission rejected";
-        }
-        state = MissionState.FAILED;
-        failureReason = reason;
-    }
 
     public void fail(String reason) {
         if (state == MissionState.COMPLETED || state == MissionState.FAILED) {

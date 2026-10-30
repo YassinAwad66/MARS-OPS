@@ -13,6 +13,8 @@ import facilities.*;
 import resources.ResourceType;
 import agents.Agent;
 import agents.Capability;
+import agents.CrewMember;
+import agents.Robot;
 
 public abstract class Mission {
 
@@ -143,12 +145,28 @@ public abstract class Mission {
             return false;
         }
 
+        EnumSet<Capability> availableCapabilities = EnumSet.noneOf(Capability.class);
+        boolean hasRequiredSkill = requiredSkill == null;
+        boolean hasRequiredBattery = batteryNeeded == 0;
+
         for (Agent agent : agents) {
             if (agent == null || !agent.canPerform(this)) {
                 return false;
             }
+            if (agent.getCapabilities() != null) {
+                availableCapabilities.addAll(agent.getCapabilities());
+            }
+            if (requiredSkill != null && agent instanceof CrewMember && ((CrewMember) agent).hasSkill(requiredSkill)) {
+                hasRequiredSkill = true;
+            }
+            if (agent instanceof Robot && ((Robot) agent).getBattery() >= batteryNeeded) {
+                hasRequiredBattery = true;
+            }
         }
-        return true;
+
+        return availableCapabilities.containsAll(requiredCapabilities)
+                && hasRequiredSkill
+                && hasRequiredBattery;
     }
 
 //_______________________________________________getters__________________________________________________//

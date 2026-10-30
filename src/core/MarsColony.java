@@ -80,7 +80,7 @@ public class MarsColony {
         for (Capability required : requiredCapabilities) {
             boolean found = false;
             for (Agent agent : getAllAgents()) {
-                if (agent != null && agent.isOperational() && agent.getCapabilities() != null && agent.getCapabilities().contains(required)) {
+                if (agent != null && agent.isAvailable() && agent.getCapabilities() != null && agent.getCapabilities().contains(required)) {
                     found = true;
                     break;
                 }

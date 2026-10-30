@@ -1,6 +1,7 @@
 package emergencies;
 import java.util.*;
 import facilities.Habitat;
+import facilities.FacilityStatus;
 import resources.ResourceType;
 import core.MarsColony;
 import agents.Capability;
@@ -26,14 +27,18 @@ public class OxygenLeak extends Emergency {
 
     @Override
     protected void onDetected(MarsColony c)   { 
-        habitat.loseOxygen(leakAmount); 
+        habitat.loseOxygen(leakAmount);
+        habitat.setStatus(FacilityStatus.UNAVAILABLE);
     }
 
     @Override
-    protected void onResolved(MarsColony c) {}
+    protected void onResolved(MarsColony c) {
+        habitat.setStatus(FacilityStatus.OPERATIONAL);
+    }
 
     @Override
     protected void onUnresolved(MarsColony c) { 
-        habitat.loseOxygen(leakAmount * 2); 
+        habitat.loseOxygen(leakAmount * 2);
+        habitat.setStatus(FacilityStatus.DESTROYED);
     }
 }

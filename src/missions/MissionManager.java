@@ -107,7 +107,7 @@ public final class MissionManager implements Tickable {
 
     private boolean assignedAgentsUsable(Mission mission) {
         for (Agent agent : mission.getAssignedAgents()) {
-            if (!agent.isOperational() || !agent.canPerform(mission))
+            if (!agent.isOperational())
                 return false;
         }
         return true;

@@ -20,11 +20,9 @@ import missions.Mission;
  */
 public class Scientist extends CrewMember {
  public Scientist(String id, String name, Set<String> skills) {
-        super(id, name, skills, new HashSet<>());
-        if (this.capabilities != capabilities) { // أو this.capabilities
-            this.capabilities.add(Capability.RESEARCH);
-        }
-    }
+     super(id, name, skills, new HashSet<>());
+     this.capabilities.add(Capability.RESEARCH);
+ }
 
     @Override
     public boolean canPerform(Mission mission) {

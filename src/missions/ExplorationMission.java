@@ -16,31 +16,6 @@ public final class ExplorationMission extends Mission {
             int duration,
             int batteryNeeded,
             String requiredSkill,
-            ResourceType resourceType,
-            List<Equipment> requiredEquipment,
-            boolean needsCommunication,
-            int minAgents,
-            Set<Capability> requiredCapabilities) {
-        this(
-                id,
-                region,
-                duration,
-                batteryNeeded,
-                requiredSkill,
-                resourceType == null ? Map.of() : Map.of(resourceType, 1),
-                requiredEquipment,
-                needsCommunication,
-                minAgents,
-                requiredCapabilities
-        );
-    }
-
-    public ExplorationMission(
-            int id,
-            String region,
-            int duration,
-            int batteryNeeded,
-            String requiredSkill,
             Map<ResourceType, Integer> resourceCosts,
             List<Equipment> requiredEquipment,
             boolean needsCommunication,

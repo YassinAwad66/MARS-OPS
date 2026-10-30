@@ -23,14 +23,6 @@ public class RoverBreakdown extends Emergency {
     }
 
     @Override
-    protected void onDetected(MarsColony c) {
-        if (rover != null) {
-            rover.damage();
-            rover.setAvailable(false);
-        }
-    }
-
-    @Override
     protected void onResolved(MarsColony c) {
         if (rover != null) {
             rover.repair();

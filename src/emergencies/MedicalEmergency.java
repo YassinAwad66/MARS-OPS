@@ -26,13 +26,6 @@ public class MedicalEmergency extends Emergency {
     }
 
     @Override
-    protected void onDetected(MarsColony c) {
-        if (patient != null) {
-            patient.damage();
-        }
-    }
-
-    @Override
     protected void onResolved(MarsColony c) {
         if (patient != null) {
             patient.treat(30);

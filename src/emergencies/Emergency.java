@@ -18,6 +18,10 @@ public abstract class Emergency {
     public final OperationResult handle(MarsColony colony) {
         onDetected(colony);
 
+        if (!colony.hasCapabilities(getRequiredCapabilities())) {
+            return fail(colony, "Missing capability");
+        }
+
         OperationResult paid = colony.getResourcePool().consume(getResponseCost());
         if (!paid.isSuccess()) {
             return fail(colony, "Not enough resources");

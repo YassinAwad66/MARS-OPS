@@ -16,7 +16,7 @@ public abstract class Emergency {
     }
 
     public final OperationResult handle(MarsColony colony) {
-
+        onDetected(colony);
         if (!colony.hasCapabilities(getRequiredCapabilities())) {
             return fail(colony, "Missing capability");
         }
@@ -48,6 +48,7 @@ public abstract class Emergency {
 
     protected abstract Set<Capability> getRequiredCapabilities();
     protected abstract Map<ResourceType, Integer> getResponseCost();
+    protected abstract void onDetected(MarsColony colony);
     protected abstract void onResolved(MarsColony colony);
     protected abstract void onUnresolved(MarsColony colony);
 }

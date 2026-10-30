@@ -25,9 +25,12 @@ public class OxygenLeak extends Emergency {
     }
 
     @Override
-    protected void onResolved(MarsColony c) {
-        habitat.addResource(ResourceType.OXYGEN, leakAmount);
+    protected void onDetected(MarsColony c)   { 
+        habitat.loseOxygen(leakAmount); 
     }
+
+    @Override
+    protected void onResolved(MarsColony c) {}
 
     @Override
     protected void onUnresolved(MarsColony c) { 

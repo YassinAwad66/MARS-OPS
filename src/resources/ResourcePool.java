@@ -1,6 +1,7 @@
 package resources;
 import java.util.*;
 import facilities.*;
+import core.OperationResult;
 
 public class ResourcePool {
     private final List<Facility> facilities;
@@ -30,7 +31,7 @@ public class ResourcePool {
 
     public OperationResult consume(Map<ResourceType, Integer> req) {
         OperationResult check = canSupply(req);
-        if (!check.isSuccess())
+        if (!check.success())
              return check;
 
         for (Map.Entry<ResourceType, Integer> e : req.entrySet()) {

@@ -9,6 +9,8 @@
  */
 package agents;
 
+import java.util.Set;
+
 import common.Location;
 import emergencies.EmergencyType;
 import missions.Mission;
@@ -18,18 +20,19 @@ import missions.Mission;
  * @author fsara
  */
 public interface Agent {
-  String getId();
+    String getId();
     String getName();
-    Location getLocation(); 
-    void setLocation(Location location);  
-    
+    Location getLocation();
+    void setLocation(Location location);
+
     boolean isAvailable();
     void setAvailable(boolean available);
-    
+
     boolean isOperational();
-    
-    boolean canPerform(Mission mission);  
-    boolean canHandle(EmergencyType emergencyType);  
+    Set<Capability> getCapabilities();
+
+    boolean canPerform(Mission mission);
+    boolean canHandle(EmergencyType emergencyType);
     void damage();
     void repair();
 }

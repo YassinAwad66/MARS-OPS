@@ -10,7 +10,6 @@
 
 package agents;
 
-import common.*;
 import missions.*;
 import emergencies.*;
 

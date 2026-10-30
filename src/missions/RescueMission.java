@@ -1,17 +1,9 @@
-
 package missions;
 
-
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
-import common.*;
-import core.MarsColony;
-import facilities.*;
-import resources.ResourceType;
+import agents.Agent;
+import agents.Capability;
 
 public final class RescueMission extends Mission {
 

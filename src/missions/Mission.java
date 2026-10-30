@@ -9,11 +9,10 @@ import java.util.Set;
 import java.util.Collections;
 import java.util.EnumMap;
 
-import common.*;
-import core.MarsColony;
 import facilities.*;
 import resources.ResourceType;
 import agents.Agent;
+import agents.Capability;
 
 public abstract class Mission {
 
@@ -125,6 +124,18 @@ public abstract class Mission {
         }
     }
 
+    public void reject(String reason) {
+        if (state == MissionState.COMPLETED || state == MissionState.FAILED) {
+            throw new IllegalStateException("Mission (" + id + ") was already finished");
+        }
+
+        if (reason == null || reason.trim().isEmpty()) {
+            reason = "Mission rejected";
+        }
+        state = MissionState.FAILED;
+        failureReason = reason;
+    }
+
     public void fail(String reason) {
         if (state == MissionState.COMPLETED || state == MissionState.FAILED) {
             throw new IllegalStateException("Mission (" + id + ") was already finished");
@@ -139,14 +150,12 @@ public abstract class Mission {
     }
 
     public boolean covers(List<Agent> agents) {
-        if (agents == null
-                || agents.size() < minimumAgents
-                || agents.contains(null)) {
+        if (agents == null || agents.size() < minimumAgents) {
             return false;
         }
 
         for (Agent agent : agents) {
-            if (!agent.canPerform(this)) {
+            if (agent == null || !agent.canPerform(this)) {
                 return false;
             }
         }

@@ -3,6 +3,7 @@ import java.util.*;
 import facilities.Habitat;
 import resources.ResourceType;
 import core.MarsColony;
+import agents.Capability;
 
 public class OxygenLeak extends Emergency {
     private final Habitat habitat;

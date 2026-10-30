@@ -1,9 +1,9 @@
 package missions;
 import java.util.List;
 import java.util.Set;
-import core.MarsColony;
 import resources.ResourceType;
-import facilities.Equipment;
+import facilities.Equipment;    
+import agents.Capability;
 
 public final class ExplorationMission extends Mission {
 

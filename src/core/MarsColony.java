@@ -72,6 +72,26 @@ public class MarsColony {
         e.handle(this);
     }
 
+    public boolean hasCapabilities(Set<Capability> requiredCapabilities) {
+        if (requiredCapabilities == null || requiredCapabilities.isEmpty()) {
+            return true;
+        }
+
+        for (Capability required : requiredCapabilities) {
+            boolean found = false;
+            for (Agent agent : getAllAgents()) {
+                if (agent != null && agent.isOperational() && agent.getCapabilities() != null && agent.getCapabilities().contains(required)) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // Get total quantity of a specific resource across all operational facilities
     public int getTotal(ResourceType t) {
         return resourcePool.getTotal(t);

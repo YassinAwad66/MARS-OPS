@@ -9,9 +9,6 @@
  */
 package agents;
 
-import common.*;
-import missions.*;
-import emergencies.*;
 import facilities.*;
 
 import java.util.ArrayList;
@@ -34,7 +31,7 @@ public class ExplorationRover extends Robot {
     public void load(Equipment eq) { 
         if (eq != null) {
             cargo.add(eq);
-        }ٍ
+        }
     }
 
     public boolean carries(String name) {

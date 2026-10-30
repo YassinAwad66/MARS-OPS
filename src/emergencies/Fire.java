@@ -1,6 +1,8 @@
 package emergencies;
 import facilities.*;
 import resources.*;
+import agents.*;
+import java.util.Set;
 import java.util.Map;
 import core.MarsColony;
 
@@ -14,7 +16,7 @@ public class Fire extends Emergency {
 
     @Override    
     protected Set<Capability> getRequiredCapabilities() {
-        return Set.of(Capability.FIREFIGHTING);
+        return Set.of(Capability.FIRE_RESPONSE);
     }
     protected Map<ResourceType, Integer> getResponseCost() {
         return Map.of(ResourceType.WATER, 5);

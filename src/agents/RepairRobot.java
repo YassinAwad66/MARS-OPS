@@ -9,45 +9,27 @@
  */
 package agents;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 
-import java.util.Set;
-import common.*;
-import emergencies.EmergencyType;
-import missions.Mission;
+import facilities.Equipment;
 /**
  *
  * @author fsara
  */
-public class ExplorationRover extends Robot {
-     private List<Equipment> cargo; 
-
-    public ExplorationRover(String id, String name) {
+public class RepairRobot extends Robot{
+    public RepairRobot(String id, String name) {
         super(id, name, new HashSet<>());
-        this.capabilities.add(Capability.SURFACE_TRAVEL);
-        this.capabilities.add(Capability.CARRY_EQUIPMENT);
-        this.cargo = new ArrayList<>();
+        this.capabilities.add(Capability.REPAIR);
     }
 
-    public void load(Equipment eq) { 
+    public void repairEquipment(Equipment eq) { 
         if (eq != null) {
-            cargo.add(eq);
-        }ٍ
-    }
-
-    public boolean carries(String name) {
-        for (Equipment eq : cargo) {
-            if (eq.getName() != null && eq.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
+            eq.repair();
         }
-        return false;
     }
 
     @Override
     public void performTask() {
-        System.out.println("ExplorationRover " + name + " is exploring the surface.");
+        System.out.println("RepairRobot " + name + " is repairing equipment.");
     }
 }

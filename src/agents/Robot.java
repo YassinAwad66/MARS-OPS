@@ -1,6 +1,7 @@
 package agents;
 
 import common.*;
+import core.MarsColony;
 import missions.*;
 import emergencies.*;
 
@@ -64,11 +65,13 @@ public abstract class Robot implements Agent,Tickable {
 
     
     @Override
-    public void onTick(int units) {
-        if (!available) {
-            drainBattery(2 * units);
-        } else {
-            drainBattery(1 * units);
+    public void onTick(MarsColony colony) {
+        if (battery > 0) {
+            drainBattery(1);
+        }
+
+        if (battery == 0) {
+            setAvailable(false);
         }
     }
 

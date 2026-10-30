@@ -1,14 +1,11 @@
-
 package missions;
-
 
 import java.util.List;
 import java.util.Set;
 
-import common.*;
-import core.MarsColony;
 import facilities.*;
 import resources.ResourceType;
+import agents.Capability;
 
 public final class ResearchMission extends Mission {
 

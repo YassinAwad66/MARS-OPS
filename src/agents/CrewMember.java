@@ -7,10 +7,11 @@
  *
  * @author asus
  */
-
+package agents;
 import java.util.Set;
 
 import common.*;
+import core.MarsColony;
 import emergencies.EmergencyType;
 import missions.Mission;
 
@@ -73,11 +74,12 @@ public abstract class CrewMember implements Agent, Tickable {
 
     
     @Override
-    public void onTick(int units) {
+    public void onTick(MarsColony colony) {
+
         if (!available) {
-            fatigue = Math.min(100.0, fatigue + (1.5 * units));
+            fatigue = Math.min(100, fatigue + 5);
         } else {
-            fatigue = Math.max(0.0, fatigue - (2.0 * units));
+            fatigue = Math.max(0, fatigue - 2);
         }
     }
 

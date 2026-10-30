@@ -5,10 +5,9 @@
 package missions;
 
 import java.util.Set;
-import core.MarsColony;
 import facilities.*;
 import resources.ResourceType;
-import agents.Agent;
+import agents.Capability;
 
 
 /**

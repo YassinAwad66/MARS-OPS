@@ -22,7 +22,7 @@ public abstract class Emergency {
         }
 
         OperationResult paid = colony.getResourcePool().consume(getResponseCost());
-        if (!paid.success()) {
+        if (!paid.isSuccess()) {
             return fail(colony, "Not enough resources");
         }
 

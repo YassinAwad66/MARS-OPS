@@ -38,8 +38,8 @@ public final class MissionManager implements Tickable {
             rejection = "Agent does not possess the required capability";
         } else {
             OperationResult supply = resourcePool.canSupply(mission.getResourceCost());
-            if (!supply.isSuccess())
-                rejection = supply.getReason();
+            if (!supply.success())
+                rejection = supply.reason();
         }
 
         if (rejection != null) {
@@ -49,8 +49,8 @@ public final class MissionManager implements Tickable {
         }
 
         OperationResult spent = resourcePool.consume(mission.getResourceCost());
-        if (!spent.isSuccess()) {
-            mission.reject(spent.getReason());
+        if (!spent.success()) {
+            mission.reject(spent.reason());
             history.add(mission);
             return spent;
         }
